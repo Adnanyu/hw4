@@ -1,9 +1,8 @@
 from math import sqrt
-from rounding import rounding as rnd
 
 # Define the function g(x)
 def g(x):
-    return (x**7 - 42*x**5 + 840*x**3 - 5839*x + 2520)/(2*x**7 - 84*x**5 + 1680*x**3 + 9199)
+    return ((x**7)/5040 - (x**5)/120 + (x**3)/6 + 1/2)
 
 # Set the initial values of prev_p and epsilon
 prev_p = 0.5051
@@ -22,7 +21,7 @@ while RE >= epsilon:
     RE = abs((p - prev_p) / p)
 
     # Print the current iteration number, the previous value of p, the current value of p, and the current value of RE
-    print(n,"\t||\t", round(prev_p,7),"\t||\t", round(p,7),"\t||\t",RE)
+    print(n,"\t||\t", round(prev_p,9),"\t||\t",round(p,9),"\t||\t",RE)
 
     # Update the value of prev_p
     prev_p = p

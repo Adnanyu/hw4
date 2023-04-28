@@ -1,13 +1,14 @@
 import math
+
 Digits = 7
 
+def f(x):
+    return 4 * x**3 - 6 * x**2 - 15 * x + 2
 
+def g(x):
+    return x - f(x) / (12 * x**2 - 12 * x - 15)
 
-f = lambda x: x ** 3 - x ** 2 + 7*x - 6   # function whose root we're approximating
-g = lambda x: x - f(x) / (3*x ** 2 - 2* x  + 7)  # the iteration function, g(x) = x - f(x) / f'(x)
-
-
-p0 = 1.632653
+p0 = 0.125
 epsilon = 10**(-7)
 RE = 1
 
@@ -20,4 +21,3 @@ while RE >= epsilon:
     n += 1
 
 print('Approximation of the fixed point is', p)
-
